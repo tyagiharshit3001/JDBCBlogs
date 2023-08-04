@@ -23,7 +23,20 @@ public class Blogs {
 	}
 	@Override
 	public String toString() {
-		return "Blog:-\n-----------------------------------------------------------\nBlog Title: " + blogTitle + "\nBlog Content: " + blogContent + "\n-----------------------------------------------------------\n";
+		String s = blogContent;
+		int count =0;
+		List<String> st1 = new List<String>(s.split(" "));
+		for(int i =0; i<s.split(" ").length; i++) {
+			count++;
+			if (count==11) {
+				st1.addAtPosition("\n", i);
+				count=0;
+			}
+		}
+		String fs ="";
+		for(String p:st1.a)
+			fs += " "+p;
+		return "Blog:-\n-----------------------------------------------------------\nBlog Title: " + blogTitle + "\nBlog Content: " + fs + "\n-----------------------------------------------------------\n";
 	}
 	
 	
